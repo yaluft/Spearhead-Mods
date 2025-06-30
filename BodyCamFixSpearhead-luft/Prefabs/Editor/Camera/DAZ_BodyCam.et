@@ -1,0 +1,7 @@
+DAZ_ManualCamera {
+ ID "65A01C3922B70C2F"
+ FOV 80
+ cameraFlags 7
+ m_fDefaultFOV 80
+ m_fSpeedMultiplier 1.5
+}
