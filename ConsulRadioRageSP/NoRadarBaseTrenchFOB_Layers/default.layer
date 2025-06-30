@@ -1,0 +1,1165 @@
+SCR_MapEntity MapEntity1 : "{731564B66F91B107}Prefabs/World/Game/MapEntity.et" {
+ coords 5119.71 59.851 5128.7
+ "Map Geometry Data" "{37CB54A4A9C57E63}SHYunakivka/SH Yuna Ext Hardcore.topo"
+ "Satellite background image" "{C5EA8E73637DA470}assets/RESULT.edds"
+}
+SCR_AIWorld SCR_AIWorld : "{E0A05C76552E7F58}Prefabs/AI/SCR_AIWorld.et" {
+ coords 5119.805 59.852 5125.117
+ {
+  CommentEntity {
+   coords 0 1 0
+   m_Comment "SCR_AIWorld: "\
+   "Configure navigation mesh"
+   m_Color 0 0 0
+   m_FaceCamera 1
+   m_TextBackground 1
+   m_BackgroundColor 1 0.6 0
+   m_BackgroundTransparency 0
+  }
+ }
+}
+PerceptionManager PerceptionManager : "{028DAEAD63E056BE}Prefabs/World/Game/PerceptionManager.et" {
+ coords 5119.805 59.852 5124.117
+}
+SCR_GameModeCampaign GameMode_Campaign : "{3B230AAC5252108F}Prefabs/MP/Modes/Conflict/GameMode_Campaign.et" {
+ components {
+  SCR_ArsenalManagerComponent "{6120A34EB1E9BBEF}" {
+   m_bRankLockedItems 0
+  }
+  SCR_DebriefingScreenComponent "{5D349E302A88E42C}" {
+   m_sHeaderTitle "Yunakivka SpearHead"
+   m_sHeaderSubtitle "Discord.gg/spear-head"
+  }
+  SCR_NametagConfigComponent "{571AA9E54FC9210D}" {
+   Enabled 0
+  }
+  SCR_NotificationSenderComponent "{56FA84B04BE7D4C0}" {
+   m_iKillFeedType DISABLED
+   m_iReceiveKillFeedType ALL
+  }
+  SCR_PlayerSpawnPointManagerComponent "{5CDABA98894199D0}" {
+   Enabled 0
+   m_bDeployableSpawnPointsEnabled 0
+  }
+  SCR_RespawnTimerComponent "{5B2A94A0E605AAFF}" {
+   m_fRespawnTime 30
+  }
+  SCR_SpawnProtectionComponent "{5D167A246026C95B}" {
+   m_fProtectionTime 0
+  }
+  SCR_TimeAndWeatherHandlerComponent "{5CC49B5A1313B84E}" {
+   m_fDayTimeAcceleration 2.3
+  }
+  SCR_TimedSpawnPointComponent "{5D0A73EB7076C758}" {
+   m_fRespawnTime 30
+  }
+  SCR_WelcomeScreenComponent "{5D349E3E9CC39991}" {
+   m_sHeaderTitle "Yunakivka SpearHead"
+   m_sHeaderSubtitle "discord.gg/spear-head"
+  }
+  SCR_XPHandlerComponent "{5CAAA397E5408ABF}" {
+   m_iVeterancyXPAwardThreshold 400
+  }
+ }
+ coords 5119.805 59.858 5123.117
+ m_iControlPointsThreshold 9
+ m_fVictoryTimer 900
+ m_iRegularSuppliesIncome 250
+ m_iHQStartingSupplies 2700
+ m_iMinStartingSupplies 600
+ m_iMaxStartingSupplies 600
+ m_iStartingSuppliesInterval 15
+ m_iSupplyDepotIconThreshold 90000
+}
+ScriptedChatEntity : "{536D80EB494DDC43}Prefabs/MP/Campaign/CampaignMPChatEntity.et" {
+ coords 10065.12 69.502 8872.233
+}
+RadioManagerEntity : "{B8E09FAB91C4ECCD}Prefabs/Radio/RadioManager.et" {
+ coords 10066.254 69.458 8864.337
+}
+SCR_CampaignFactionManager CampaignFactionManager : "{F1AC26310BAE3788}Prefabs/MP/Campaign/CampaignFactionManager.et" {
+ coords 5119.805 59.852 5126.117
+ Factions {
+  SCR_CampaignFaction "{50B30C3ADB052C80}" {
+   m_aStartingVehicles {
+    "{AE29A85FD98E00CF}Prefabs/Vehicles/Wheeled/Ural4320/Ural4320_transport_covered UA.et" "{11E79D9C1165482B}Prefabs/Vehicles/Wheeled/M998/UpArmorKit/M1025_armed_M2HB_SH_UpArmored.et" "{60A39AA2639785CD}Prefabs/Vehicles/Wheeled/Stryker/M1126/CROWS/Stryker_CROWS.et"
+   }
+  }
+ }
+ {
+  CommentEntity {
+   coords 0 1 0
+   m_Comment "CampaignFactionManager: "\
+   "Make sure one faction is non-playable to use for Independent units."
+   m_Color 0 0 0
+   m_FaceCamera 1
+   m_TextBackground 1
+   m_BackgroundColor 1 0.6 0
+   m_BackgroundTransparency 0
+  }
+ }
+}
+$grp GenericEntity : "{1391CE8C0E255636}Prefabs/Systems/MilitaryBase/ConflictMilitaryBase.et" {
+ ConflictMilitaryBase {
+  components {
+   SCR_CampaignMilitaryBaseComponent "{5AFC974A70234D1C}" {
+    m_bCanBeHQ 1
+    m_bIsSupplyHub 1
+   }
+   SCR_CampaignSeizingComponent "{5C66967235FBEEA3}" {
+    Enabled 0
+   }
+   SCR_CoverageRadioComponent "{5C669673C2A82A2B}" {
+    "Turned on" 1
+    Transceivers {
+     RelayTransceiver "{5C669673E8C94083}" {
+      ChannelFrequency 42001
+      "Transmitting Range" 1703.8
+     }
+    }
+    m_bIsSource 1
+   }
+  }
+  coords 7037.263 58.19 9678.121
+  angleY -77.15
+  {
+   CommentEntity {
+    coords 0 1 0
+    m_Comment "ConflictMilitaryBase: "\
+    "At least two bases need \"Can be HQ\" param checked. Place bases and control points wherever you wish."
+    m_Color 0 0 0
+    m_FaceCamera 1
+    m_TextBackground 1
+    m_BackgroundColor 1 0.6 0
+    m_BackgroundTransparency 0
+   }
+  }
+ }
+ ConflictMilitaryBase2 {
+  components {
+   SCR_CampaignMilitaryBaseComponent "{5AFC974A70234D1C}" {
+    m_bCanBeHQ 1
+    m_bIsSupplyHub 1
+   }
+   SCR_CampaignSeizingComponent "{5C66967235FBEEA3}" {
+    Enabled 0
+   }
+   SCR_CoverageRadioComponent "{5C669673C2A82A2B}" {
+    "Turned on" 1
+    Transceivers {
+     RelayTransceiver "{5C669673E8C94083}" {
+      ChannelFrequency 42001
+      "Transmitting Range" 1522.1
+     }
+    }
+    m_bIsSource 1
+   }
+  }
+  coords 3139.192 70.31 64.991
+  angleY -108.995
+  {
+   CommentEntity {
+    coords 0 1 0
+    m_Comment "ConflictMilitaryBase: "\
+    "At least two bases need \"Can be HQ\" param checked. Place bases and control points wherever you wish."
+    m_Color 0 0 0
+    m_FaceCamera 1
+    m_TextBackground 1
+    m_BackgroundColor 1 0.6 0
+    m_BackgroundTransparency 0
+   }
+  }
+ }
+ lodge {
+  components {
+   SCR_CampaignMilitaryBaseComponent "{5AFC974A70234D1C}" {
+    m_sBaseName "\"Lodge\""
+    m_sBaseNameUpper "Orchard"
+   }
+   SCR_CampaignMilitaryBaseMapDescriptorComponent "{5C669672B19BFE5A}" {
+    DisplayName "Safe Zone"
+   }
+   SCR_CampaignSuppliesComponent "{5C6696724F524DA2}" {
+    m_iSuppliesMax 1000
+   }
+   SCR_CoverageRadioComponent "{5C669673C2A82A2B}" {
+    Transceivers {
+     RelayTransceiver "{5C669673E8C94083}" {
+      ChannelFrequency 42001
+      "Transmitting Range" 1861.3
+     }
+    }
+   }
+  }
+  coords 5544.61 66.156 7688.316
+  angleY -163.443
+ }
+ PowerStation {
+  components {
+   SCR_CampaignMilitaryBaseComponent "{5AFC974A70234D1C}" {
+    m_sBaseName "\"Power Plant\""
+    m_sBaseNameUpper "Power station"
+   }
+   SCR_CampaignSuppliesComponent "{5C6696724F524DA2}" {
+    m_iSuppliesMax 1000
+   }
+   SCR_CoverageRadioComponent "{5C669673C2A82A2B}" {
+    Transceivers {
+     RelayTransceiver "{5C669673E8C94083}" {
+      ChannelFrequency 42001
+      "Transmitting Range" 2129.8
+     }
+    }
+   }
+  }
+  coords 2453.154 72.315 5836.106
+  angleY -4.365
+ }
+ safeline3 {
+  components {
+   SCR_CampaignMilitaryBaseComponent "{5AFC974A70234D1C}" {
+    m_sBaseName "\"Safe Haven\""
+    m_sBaseNameUpper "Serenity"
+   }
+   SCR_CampaignMilitaryBaseMapDescriptorComponent "{5C669672B19BFE5A}" {
+    DisplayName "Safe Zone"
+   }
+   SCR_CampaignSuppliesComponent "{5C6696724F524DA2}" {
+    m_iSuppliesMax 1000
+   }
+   SCR_CoverageRadioComponent "{5C669673C2A82A2B}" {
+    Transceivers {
+     RelayTransceiver "{5C669673E8C94083}" {
+      ChannelFrequency 42001
+      "Transmitting Range" 1705.9
+     }
+    }
+   }
+  }
+  coords 6996.504 65.594 7652.523
+  angleY 143.543
+ }
+ safeline4 {
+  components {
+   SCR_CampaignMilitaryBaseComponent "{5AFC974A70234D1C}" {
+    m_sBaseName "\"Safe Haven \""
+    m_sBaseNameUpper "Serenity "
+   }
+   SCR_CampaignMilitaryBaseMapDescriptorComponent "{5C669672B19BFE5A}" {
+    DisplayName "Safe Zone"
+   }
+   SCR_CampaignSuppliesComponent "{5C6696724F524DA2}" {
+    m_iSuppliesMax 1000
+   }
+   SCR_CoverageRadioComponent "{5C669673C2A82A2B}" {
+    Transceivers {
+     RelayTransceiver "{5C669673E8C94083}" {
+      ChannelFrequency 42001
+      "Transmitting Range" 2276.7
+     }
+    }
+   }
+  }
+  coords 3547.713 69.321 1165.473
+  angleY -45.138
+ }
+ Storage {
+  components {
+   SCR_CampaignMilitaryBaseComponent "{5AFC974A70234D1C}" {
+    m_sBaseName "\"Storage Yard \""
+    m_sBaseNameUpper "Storage"
+   }
+   SCR_CampaignSuppliesComponent "{5C6696724F524DA2}" {
+    m_iSuppliesMax 1000
+   }
+   SCR_CoverageRadioComponent "{5C669673C2A82A2B}" {
+    Transceivers {
+     RelayTransceiver "{5C669673E8C94083}" {
+      ChannelFrequency 42001
+      "Transmitting Range" 2153.5
+     }
+    }
+   }
+  }
+  coords 7209.604 68.25 5450.846
+  angleY 29.704
+ }
+ yunkyard {
+  components {
+   SCR_CampaignMilitaryBaseComponent "{5AFC974A70234D1C}" {
+    m_sBaseName "\"Yunk Yard\""
+    m_sBaseNameUpper "Scarp yard"
+   }
+   SCR_CampaignMilitaryBaseMapDescriptorComponent "{5C669672B19BFE5A}" {
+    DisplayName "Safe Zone"
+   }
+   SCR_CampaignSuppliesComponent "{5C6696724F524DA2}" {
+    m_iSuppliesMax 1000
+   }
+   SCR_CoverageRadioComponent "{5C669673C2A82A2B}" {
+    Transceivers {
+     RelayTransceiver "{5C669673E8C94083}" {
+      ChannelFrequency 42001
+      "Transmitting Range" 2267.7
+     }
+    }
+   }
+  }
+  coords 4690.832 64.079 2972.479
+  angleY -165.209
+ }
+ Blacksite {
+  components {
+   SCR_CampaignMilitaryBaseComponent "{5AFC974A70234D1C}" {
+    m_bIsControlPoint 1
+    m_sBaseName "\"Black Site\""
+    m_sBaseNameUpper "Area 21"
+   }
+   SCR_CampaignSuppliesComponent "{5C6696724F524DA2}" {
+    m_iSuppliesMax 1500
+   }
+   SCR_CoverageRadioComponent "{5C669673C2A82A2B}" {
+    Transceivers {
+     RelayTransceiver "{5C669673E8C94083}" {
+      ChannelFrequency 42001
+      "Transmitting Range" 1250
+     }
+    }
+   }
+  }
+  coords 7050.595 52.594 6901.946
+  angleY -133.995
+ }
+ Industrial {
+  components {
+   SCR_CampaignMilitaryBaseComponent "{5AFC974A70234D1C}" {
+    m_bIsControlPoint 1
+    m_sBaseName "\"Industrial Factory\""
+    m_sBaseNameUpper "Industrial "
+   }
+   SCR_CampaignSuppliesComponent "{5C6696724F524DA2}" {
+    m_iSuppliesMax 1500
+   }
+   SCR_CoverageRadioComponent "{5C669673C2A82A2B}" {
+    Transceivers {
+     RelayTransceiver "{5C669673E8C94083}" {
+      ChannelFrequency 42001
+      "Transmitting Range" 2068.2
+     }
+    }
+   }
+  }
+  coords 6434.321 67.624 3855.355
+  angleY 97.882
+ }
+ Processing {
+  components {
+   SCR_CampaignMilitaryBaseComponent "{5AFC974A70234D1C}" {
+    m_bIsControlPoint 1
+    m_sBaseName "\"Concrete Processing\""
+    m_sBaseNameUpper "Processing Plant"
+   }
+   SCR_CampaignSeizingComponent "{5C66967235FBEEA3}" {
+    m_iRadius 100
+    m_fMaximumSeizingTime 120
+    m_fMinimumSeizingTime 10
+    m_fRespawnCooldownPeriod 10
+   }
+   SCR_CampaignSuppliesComponent "{5C6696724F524DA2}" {
+    m_iSuppliesMax 1500
+   }
+   SCR_CoverageRadioComponent "{5C669673C2A82A2B}" {
+    Transceivers {
+     RelayTransceiver "{5C669673E8C94083}" {
+      ChannelFrequency 42001
+      "Transmitting Range" 1661.7
+     }
+    }
+   }
+  }
+  coords 8741.388 67.973 5739.996
+  angleY 113.373
+ }
+ Rats {
+  components {
+   SCR_CampaignMilitaryBaseComponent "{5AFC974A70234D1C}" {
+    m_bIsControlPoint 1
+    m_sBaseName "\"Rats Nest\""
+    m_sBaseNameUpper "Center of Hell"
+   }
+   SCR_CampaignSuppliesComponent "{5C6696724F524DA2}" {
+    m_iSuppliesMax 1500
+   }
+   SCR_CoverageRadioComponent "{5C669673C2A82A2B}" {
+    Transceivers {
+     RelayTransceiver "{5C669673E8C94083}" {
+      ChannelFrequency 42001
+      "Transmitting Range" 750
+     }
+    }
+   }
+  }
+  coords 5228.814 46.25 5536.937
+  angleY 93.588
+ }
+ Rogers {
+  components {
+   SCR_CampaignMilitaryBaseComponent "{5AFC974A70234D1C}" {
+    m_bIsControlPoint 1
+    m_sBaseName "\"Woodbury\""
+    m_sBaseNameUpper "Mr Rogers"
+   }
+   SCR_CampaignSuppliesComponent "{5C6696724F524DA2}" {
+    m_iSuppliesMax 1500
+   }
+   SCR_CoverageRadioComponent "{5C669673C2A82A2B}" {
+    Transceivers {
+     RelayTransceiver "{5C669673E8C94083}" {
+      ChannelFrequency 42001
+      "Transmitting Range" 2079.1
+     }
+    }
+   }
+  }
+  coords 4285.336 65.091 5826.898
+  angleY -68.718
+ }
+ Sawmill {
+  components {
+   SCR_CampaignMilitaryBaseComponent "{5AFC974A70234D1C}" {
+    m_bIsControlPoint 1
+    m_sBaseName "\"Sawmill\""
+    m_sBaseNameUpper "Sawmill Factory"
+   }
+   SCR_CampaignSuppliesComponent "{5C6696724F524DA2}" {
+    m_iSuppliesMax 1500
+   }
+   SCR_CoverageRadioComponent "{5C669673C2A82A2B}" {
+    Transceivers {
+     RelayTransceiver "{5C669673E8C94083}" {
+      ChannelFrequency 42001
+      "Transmitting Range" 1989.2
+     }
+    }
+   }
+  }
+  coords 3804.881 72.781 7225.015
+  angleY 158.314
+ }
+ Shipping {
+  components {
+   SCR_CampaignMilitaryBaseComponent "{5AFC974A70234D1C}" {
+    m_bIsControlPoint 1
+    m_sBaseName "\"Shipping Center\""
+    m_sBaseNameUpper "Shipping"
+   }
+   SCR_CampaignSuppliesComponent "{5C6696724F524DA2}" {
+    m_iSuppliesMax 1500
+   }
+   SCR_CoverageRadioComponent "{5C669673C2A82A2B}" {
+    Transceivers {
+     RelayTransceiver "{5C669673E8C94083}" {
+      ChannelFrequency 42001
+      "Transmitting Range" 1288.4
+     }
+    }
+   }
+  }
+  coords 1343.105 67.656 5450.033
+  angleY 18.655
+ }
+ spearhead {
+  components {
+   SCR_CampaignMilitaryBaseComponent "{5AFC974A70234D1C}" {
+    m_iRadius 120
+    m_bIsControlPoint 1
+    m_sBaseName "\"SpearHead Point\""
+    m_sBaseNameUpper "FOB SH"
+   }
+   SCR_CampaignSeizingComponent "{5C66967235FBEEA3}" {
+    m_iRadius 100
+    m_fMaximumSeizingTime 120
+    m_fMinimumSeizingTime 10
+    m_fRespawnCooldownPeriod 10
+   }
+   SCR_CampaignSuppliesComponent "{5C6696724F524DA2}" {
+    m_iSuppliesMax 1500
+   }
+   SCR_CoverageRadioComponent "{5C669673C2A82A2B}" {
+    Transceivers {
+     RelayTransceiver "{5C669673E8C94083}" {
+      ChannelFrequency 42001
+      "Transmitting Range" 2027.9
+     }
+    }
+   }
+  }
+  coords 3397.751 64.305 4087.987
+  angleY -18.733
+ }
+ Trench {
+  components {
+   SCR_CampaignMilitaryBaseComponent "{5AFC974A70234D1C}" {
+    m_bIsControlPoint 1
+    m_sBaseName "\"No Mans Land\""
+    m_sBaseNameUpper "Trench FOB"
+   }
+   SCR_CampaignSuppliesComponent "{5C6696724F524DA2}" {
+    m_iSuppliesMax 1500
+   }
+   SCR_CoverageRadioComponent "{5C669673C2A82A2B}" {
+    Transceivers {
+     RelayTransceiver "{5C669673E8C94083}" {
+      ChannelFrequency 42001
+      "Transmitting Range" 800
+     }
+    }
+   }
+  }
+  coords 6043.055 52.594 5654.182
+  angleY -173.485
+  {
+   SCR_CampaignSpawnPointGroup {
+    ID "5C6696731466AF36"
+    coords 0 0 0
+    angleY 24.174
+   }
+  }
+ }
+}
+SCR_BaseTaskManager CampaignTaskManager : "{17E3EF2CF455460F}Prefabs/MP/Campaign/CampaignTaskManager.et" {
+ coords 5119.805 59.852 5127.117
+}
+$grp GenericEntity : "{26D397990258E61A}Prefabs/Structures/BuildingParts/Signs/SH-Standard/Wall/Commercial/SignCommercial_01_CarService_Example.et" {
+ {
+  coords 5074.761 65.499 5635.392
+  angleY -74.071
+ }
+ {
+  coords 5350.786 56.261 5557.765
+  angleY 105.639
+ }
+}
+$grp GenericEntity : "{27941CDF3E7E1A5F}Prefabs/MP/Campaign/CampaignRemnantsSupplyDepot.et" {
+ {
+  coords 5264.969 61.428 4936.587
+  {
+   GenericEntity : "{47789BA6E9CA2928}Prefabs/MP/Campaign/SupplyDepots/SupplyCache_S_FIA_03_Campaign.et" {
+    coords 1.506 0.028 -9.14
+    angleY 3.996
+   }
+   GenericEntity : "{869A4C4CA7F43C21}Prefabs/MP/Campaign/SupplyDepots/SupplyCache_S_FIA_06_Campaign.et" {
+    coords 6.673 -0.047 9.642
+    angleY -154.62
+   }
+   GenericEntity : "{C63BFEEA9DE1CF26}Prefabs/MP/Campaign/SupplyDepots/SupplyCache_S_FIA_05_Campaign.et" {
+    coords -7.573 -0.082 7.959
+    angleY 125.517
+   }
+   GenericEntity : "{F9A490888BED61DB}Prefabs/MP/Campaign/SupplyDepots/SupplyCache_S_FIA_04_Campaign.et" {
+    coords -9.024 -0.038 -1.553
+   }
+  }
+ }
+ {
+  coords 1768.668 69.713 2685.899
+  angleY -155.864
+  {
+   GenericEntity : "{47789BA6E9CA2928}Prefabs/MP/Campaign/SupplyDepots/SupplyCache_S_FIA_03_Campaign.et" {
+    coords -2.063 -0.059 9.828
+    angleY -169.767
+   }
+   GenericEntity : "{869A4C4CA7F43C21}Prefabs/MP/Campaign/SupplyDepots/SupplyCache_S_FIA_06_Campaign.et" {
+    coords -13.141 -0.336 3.498
+    angleY -169.767
+   }
+   GenericEntity : "{C63BFEEA9DE1CF26}Prefabs/MP/Campaign/SupplyDepots/SupplyCache_S_FIA_05_Campaign.et" {
+    coords -1.226 -0.018 -11.574
+    angleY -169.767
+   }
+   GenericEntity : "{F9A490888BED61DB}Prefabs/MP/Campaign/SupplyDepots/SupplyCache_S_FIA_04_Campaign.et" {
+    coords 7.818 0.079 -7.469
+    angleY -169.767
+   }
+  }
+ }
+ {
+  coords 6730.101 68.989 1866.098
+  angleX 0.693
+  angleY 11.788
+  angleZ 1.059
+  {
+   GenericEntity : "{47789BA6E9CA2928}Prefabs/MP/Campaign/SupplyDepots/SupplyCache_S_FIA_03_Campaign.et" {
+    coords -2.063 -0.059 9.828
+    angleY -169.767
+   }
+   GenericEntity : "{869A4C4CA7F43C21}Prefabs/MP/Campaign/SupplyDepots/SupplyCache_S_FIA_06_Campaign.et" {
+    coords -13.141 -0.336 3.498
+    angleY -169.767
+   }
+   GenericEntity : "{C63BFEEA9DE1CF26}Prefabs/MP/Campaign/SupplyDepots/SupplyCache_S_FIA_05_Campaign.et" {
+    coords -1.226 -0.018 -11.574
+    angleY -169.767
+   }
+   GenericEntity : "{F9A490888BED61DB}Prefabs/MP/Campaign/SupplyDepots/SupplyCache_S_FIA_04_Campaign.et" {
+    coords 7.818 0.079 -7.469
+    angleY -169.767
+   }
+  }
+ }
+ {
+  coords 2696.025 68.583 8788.536
+  angleX -0.273
+  angleY 147.452
+  angleZ 1.236
+  {
+   GenericEntity : "{47789BA6E9CA2928}Prefabs/MP/Campaign/SupplyDepots/SupplyCache_S_FIA_03_Campaign.et" {
+    coords -2.063 -0.059 9.828
+    angleY -169.767
+   }
+   GenericEntity : "{869A4C4CA7F43C21}Prefabs/MP/Campaign/SupplyDepots/SupplyCache_S_FIA_06_Campaign.et" {
+    coords -13.141 -0.336 3.498
+    angleY -169.767
+   }
+   GenericEntity : "{C63BFEEA9DE1CF26}Prefabs/MP/Campaign/SupplyDepots/SupplyCache_S_FIA_05_Campaign.et" {
+    coords -1.226 -0.018 -11.574
+    angleY -169.767
+   }
+   GenericEntity : "{F9A490888BED61DB}Prefabs/MP/Campaign/SupplyDepots/SupplyCache_S_FIA_04_Campaign.et" {
+    coords 7.818 0.079 -7.469
+    angleY -169.767
+   }
+  }
+ }
+ {
+  coords 8280.944 67.283 7240.187
+  angleX -0.4
+  angleY -26.595
+  angleZ 1.201
+  {
+   GenericEntity : "{47789BA6E9CA2928}Prefabs/MP/Campaign/SupplyDepots/SupplyCache_S_FIA_03_Campaign.et" {
+    coords -2.063 -0.059 9.828
+    angleY -169.767
+   }
+   GenericEntity : "{869A4C4CA7F43C21}Prefabs/MP/Campaign/SupplyDepots/SupplyCache_S_FIA_06_Campaign.et" {
+    coords -13.141 -0.336 3.498
+    angleY -169.767
+   }
+   GenericEntity : "{C63BFEEA9DE1CF26}Prefabs/MP/Campaign/SupplyDepots/SupplyCache_S_FIA_05_Campaign.et" {
+    coords -1.226 -0.018 -11.574
+    angleY -169.767
+   }
+   GenericEntity : "{F9A490888BED61DB}Prefabs/MP/Campaign/SupplyDepots/SupplyCache_S_FIA_04_Campaign.et" {
+    coords 7.818 0.079 -7.469
+    angleY -169.767
+   }
+  }
+ }
+}
+GenericEntity : "{4438254EAEDBB967}Prefabs/Props/Agriculture/Hay Pile Large.et" {
+ coords 3588.973 69.57 1218.026
+ angleY -156.999
+}
+$grp GenericEntity : "{451BE00A37C69679}Prefabs/Structures/Military/Radar/ApproachRadar_TPN19_01/ApproachRadar_TPN19_01_generator.et" {
+ {
+  coords 5793.788 65.718 8849.998
+  angleY 17.348
+ }
+ {
+  coords 7099.705 65.718 7608.325
+  angleY 17.348
+ }
+ {
+  coords 7026.32 63.866 7624.584
+  angleY 17.348
+ }
+}
+GenericEntity : "{4EFAF3A082D0DE46}Prefabs/Structures/BuildingParts/Flags/FlagPole_02/FlagPole_Stick_UkraineCOA.et" {
+ coords 5960.305 68.184 5633.403
+ angleY 112.041
+}
+SCR_LoadoutManager CampaignLoadoutManager : "{58FBD035E53D95C1}Prefabs/MP/Campaign/CampaignLoadoutManager.et" {
+ coords 5119.805 59.852 5128.117
+}
+GenericEntity : "{5BDEE1DD2DBB8AE3}assets/Trenches 2/Cellar/Cellar/Cellar Basement.et" {
+ coords 3581.984 69.48 1209.041
+ angleY 126.817
+}
+$grp StaticModelEntity : "{646B39CAA56894AF}Prefabs/bunker.et" {
+ {
+  coords 6740.401 63.001 5865.774
+  angleY -32.69
+ }
+ {
+  coords 6825.656 64.174 5895.632
+  angleY 42.199
+ }
+}
+Building : "{6A76646345FF655F}Prefabs/Structures/Bunkers/Concrete_Bunker.et" {
+ coords 7096.658 0.477 7645.933
+ angleY 78.258
+}
+$grp GenericEntity : "{9BCE3A93DC1F3F00}Prefabs/Structures/BuildingParts/Flags/FlagPole_02/FlagPole_Stick_SpearHead.et" {
+ {
+  coords 3698.224 70.908 1645.952
+  scale 2.4
+ }
+ {
+  coords 3730.756 70.938 1632.035
+  scale 2.4
+ }
+ {
+  coords 3792.653 71.601 1605.534
+  scale 2.4
+ }
+ {
+  coords 3912.276 72.594 1557.642
+  scale 2.4
+ }
+ {
+  coords 4024.323 73.168 1508.754
+  scale 2.4
+ }
+ {
+  coords 4163.795 72.344 1472.04
+  scale 2.4
+ }
+ {
+  coords 4278.599 70.048 1424.386
+  scale 2.4
+ }
+ {
+  coords 4390.055 69.257 1263.58
+  scale 2.4
+ }
+ {
+  coords 4450.249 71.015 1151.486
+  scale 2.4
+ }
+ {
+  coords 4560.006 71.26 1053.381
+  scale 2.4
+ }
+ {
+  coords 4682.78 72.409 909.641
+  scale 2.4
+ }
+ {
+  coords 4779.706 72.195 782.796
+  scale 2.4
+ }
+ {
+  coords 4859.522 75.139 635.122
+  scale 2.4
+ }
+ {
+  coords 4909.17 71.87 533.163
+  scale 2.4
+ }
+ {
+  coords 4954.785 71.515 417.443
+  scale 2.4
+ }
+ {
+  coords 5009.732 74.415 316.731
+  scale 2.4
+ }
+ {
+  coords 5067.689 73.944 175.321
+  scale 2.4
+ }
+ {
+  coords 5109.334 68.458 75.292
+  scale 2.4
+ }
+ {
+  coords 3598.603 71.375 1699.826
+  scale 2.4
+ }
+ {
+  coords 3519.798 71.664 1734.107
+  scale 2.4
+ }
+ {
+  coords 3665.99 70.957 1669.979
+  scale 2.4
+ }
+ {
+  coords 3452.565 70.333 1754.479
+  scale 2.4
+ }
+ {
+  coords 3330.131 69.482 1772.292
+  scale 2.4
+ }
+ {
+  coords 3269.826 68.946 1769.337
+  scale 2.4
+ }
+ {
+  coords 3122.409 66.112 1765.879
+  scale 2.4
+ }
+ {
+  coords 3074.786 65.43 1756.107
+  scale 2.4
+ }
+ {
+  coords 2977.025 65.094 1756.409
+  scale 2.4
+ }
+ {
+  coords 2901.287 65.435 1754.133
+  scale 2.4
+ }
+ {
+  coords 2830.151 66.202 1750.214
+  scale 2.4
+ }
+ {
+  coords 2764.789 67.388 1739.652
+  scale 2.4
+ }
+ {
+  coords 2703.255 67.526 1722.35
+  scale 2.4
+ }
+ {
+  coords 2630.442 68.57 1705.303
+  scale 2.4
+ }
+ {
+  coords 2586.627 68.562 1688.589
+  scale 2.4
+ }
+ {
+  coords 2534.936 68.568 1683.051
+  scale 2.4
+ }
+ {
+  coords 2498.698 69.374 1664.641
+  scale 2.4
+ }
+ {
+  coords 2419.476 69.781 1625.813
+  scale 2.4
+ }
+ {
+  coords 2355.922 70.5 1584.946
+  scale 2.4
+ }
+ {
+  coords 2306.175 70.514 1531.052
+  scale 2.4
+ }
+ {
+  coords 2168.082 71.24 1472.656
+  scale 2.4
+ }
+ {
+  coords 2122.909 71.253 1438.179
+  scale 2.4
+ }
+ {
+  coords 2065.567 72.093 1382.253
+  scale 2.4
+ }
+ {
+  coords 2014.627 71.804 1359.71
+  scale 2.4
+ }
+ {
+  coords 5896.451 64.969 8271.479
+  scale 2.4
+ }
+ {
+  coords 5871.29 65.218 8264.972
+  scale 2.4
+ }
+ {
+  coords 5991.716 64.368 8283.021
+  scale 2.4
+ }
+ {
+  coords 6058.02 63.706 8273.139
+  scale 2.4
+ }
+ {
+  coords 6137.116 62.346 8260.297
+  scale 2.4
+ }
+ {
+  coords 6185.3 62.094 8282.026
+  scale 2.4
+ }
+ {
+  coords 6233.249 61.093 8334.05
+  scale 2.4
+ }
+ {
+  coords 6380.904 58.312 8414.59
+  scale 2.4
+ }
+ {
+  coords 6445.496 58 8444.806
+  scale 2.4
+ }
+ {
+  coords 6513.298 57.782 8470.979
+  scale 2.4
+ }
+ {
+  coords 6592.411 57.906 8504.503
+  scale 2.4
+ }
+ {
+  coords 6631.243 58.47 8530.741
+  scale 2.4
+ }
+ {
+  coords 6661.384 58.065 8577.838
+  scale 2.4
+ }
+ {
+  coords 6710.665 59.188 8627.931
+  scale 2.4
+ }
+ {
+  coords 6727.066 59.218 8646.119
+  scale 2.4
+ }
+ {
+  coords 6819.01 60.377 8728.443
+  scale 2.4
+ }
+ {
+  coords 6852.032 60.937 8759.697
+  scale 2.4
+ }
+ {
+  coords 6889.443 62.165 8800.379
+  scale 2.4
+ }
+ {
+  coords 6972.012 63.293 8844.03
+  scale 2.4
+ }
+ {
+  coords 7074.456 64.34 8906.229
+  scale 2.4
+ }
+ {
+  coords 7121.349 64.408 8932.654
+  scale 2.4
+ }
+ {
+  coords 7154.282 64.875 8990.811
+  scale 2.4
+ }
+ {
+  coords 7177.258 64.764 9031.063
+  scale 2.4
+ }
+ {
+  coords 7257.195 64.842 9135.584
+  scale 2.4
+ }
+ {
+  coords 7299.492 64.785 9159.765
+  scale 2.4
+ }
+ {
+  coords 7363.311 64.499 9208.73
+  scale 2.4
+ }
+ {
+  coords 7414.217 63.758 9274.468
+  scale 2.4
+ }
+ {
+  coords 7536.3 63.188 9352.937
+  scale 2.4
+ }
+ {
+  coords 7585.193 62.2 9407.197
+  scale 2.4
+ }
+ {
+  coords 7477.379 63.313 9306.209
+  scale 2.4
+ }
+ {
+  coords 7637.247 61.469 9461.396
+  scale 2.4
+ }
+ {
+  coords 7724.176 59.907 9546.992
+  scale 2.4
+ }
+ {
+  coords 7830.981 59.341 9590.064
+  scale 2.4
+ }
+ {
+  coords 7887.438 61.296 9670.773
+  scale 2.4
+ }
+ {
+  coords 7963.106 63.105 9724.482
+  scale 2.4
+ }
+ {
+  coords 8014.713 66.072 9823.156
+  scale 2.4
+ }
+ {
+  coords 8084.17 67.346 9846.609
+  scale 2.4
+ }
+ {
+  coords 8139.958 68.648 9920.174
+  scale 2.4
+ }
+ {
+  coords 8196.414 70.344 10010.952
+  scale 2.4
+ }
+ {
+  coords 8200.574 70.312 10092.697
+  scale 2.4
+ }
+ {
+  coords 8198.722 70.422 10184.509
+  scale 2.4
+ }
+ {
+  coords 5603.347 67.343 8376.942
+  scale 2.4
+ }
+ {
+  coords 5544.799 67.945 8440.417
+  scale 2.4
+ }
+ {
+  coords 5387.979 69.032 8424.985
+  scale 2.4
+ }
+ {
+  coords 5244.069 69.563 8495.097
+  scale 2.4
+ }
+ {
+  coords 5155.447 70.281 8586.859
+  scale 2.4
+ }
+ {
+  coords 5066.079 69.551 8706.735
+  scale 2.4
+ }
+ {
+  coords 4991.339 69.905 8812.517
+  scale 2.4
+ }
+ {
+  coords 4909.014 69.907 8954.242
+  scale 2.4
+ }
+ {
+  coords 4870.805 69.944 9088.771
+  scale 2.4
+ }
+ {
+  coords 4841.75 70.407 9231.797
+  scale 2.4
+ }
+ {
+  coords 4825.71 70.274 9363.188
+  scale 2.4
+ }
+ {
+  coords 4764.606 69.646 9504.664
+  scale 2.4
+ }
+ {
+  coords 4701.104 68.685 9610.939
+  scale 2.4
+ }
+ {
+  coords 4621.71 68.842 9737.902
+  scale 2.4
+ }
+ {
+  coords 4579.1 68.309 9836.572
+  scale 2.4
+ }
+ {
+  coords 4534.869 67.187 9932.414
+  scale 2.4
+ }
+ {
+  coords 4507.454 66.104 9981.6
+  scale 2.4
+ }
+ {
+  coords 5315.271 69.313 8450.78
+  scale 2.4
+ }
+ {
+  coords 5475.314 68.531 8430.8
+  scale 2.4
+ }
+ {
+  coords 4588.15 66.406 4963.156
+  scale 2.4
+ }
+ {
+  coords 4726.639 68.122 5756.776
+  scale 1.4
+ }
+}
+$grp StaticModelEntity : "{A0190D51FD62FF68}Prefabs/Structures/Military/Radar/ApproachRadar_TPN19_01/ApproachRadar_TPN19_01.et" {
+ {
+  coords 5783.061 4.631 8835.231
+  angleY -173.77
+ }
+ {
+  coords 7088.978 1.889 7593.559
+  angleY -173.77
+ }
+ {
+  coords 7015.593 0.285 7609.816
+  angleY -173.77
+ }
+}
+$grp GenericEntity : "{AAB41F3CE4965A76}Prefabs/Compositions/Misc/SubCompositions/Storage/Slotted/Shelter_Arsenal_US_02.et" {
+ {
+  coords 3115.023 69.871 41.786
+  angleY 68.192
+ }
+ {
+  coords 7011.054 58.15 9658.313
+  angleY 102.931
+ }
+ {
+  coords 5253.945 45.493 5514.35
+  angleY -42.448
+ }
+}
+$grp GenericEntity : "{C6E02BDC5852D558}Prefabs/Compositions/Misc/SubCompositions/Storage/Slotted/Shelter_Arsenal_US_01.et" {
+ {
+  coords 3113.168 69.832 46.706
+  angleY 68.192
+ }
+ {
+  coords 7012.291 58.141 9663.146
+  angleY 102.605
+ }
+ {
+  coords 5256.465 45.25 5516.906
+  angleY -39.864
+ }
+}
+GenericEntity : "{DED4DB7D08E6E0BE}Prefabs/Structures/Military/Radar/ApproachRadar_RPL5_01/ApproachRadar_RPL5_01.et" {
+ coords 5772.245 74.29 8805.416
+ angleY 14.374
+}

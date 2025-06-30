@@ -1,0 +1,22 @@
+GameProject {
+ ID "BodyCamFixSpearheadluft"
+ GUID "65B8D4A4E7FAB66E"
+ TITLE "BodyCamFixSpearhead-luft"
+ Dependencies {
+  "65643E820F3A281C" "65B8D4A4E7FAB66E" "58D0FB3206B6F859" "64FD308B60F7B687"
+ }
+ Configurations {
+  GameProjectConfig PC {
+  }
+  GameProjectConfig XBOX_ONE {
+  }
+  GameProjectConfig XBOX_SERIES {
+  }
+  GameProjectConfig PS4 {
+  }
+  GameProjectConfig PS5 {
+  }
+  GameProjectConfig HEADLESS {
+  }
+ }
+}
